@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Incluyendo .js de Culqi Checkout-->
+        <!--<script src="https://checkout.culqi.com/v2"></script>-->
+        <script src="https://integ-pago.culqi.com/api/v2/culqi.js"></script>
+        <!-- Configurando el checkout-->
+        
+    </head>
+    <body>
+        <script>
+            Culqi.publicKey = 'pk_test_jQDg17Ot1ZkfJtrz';
+            Culqi.settings({
+                title: 'Culqi Store',
+                currency: 'PEN',
+                description: 'Polo/remera Culqi lover',
+                amount: 3500
+            });
+            
+            function culqi() {
+
+                if (Culqi.token) { // ¡Token creado exitosamente!
+                    // Get the token ID:
+                    var token = Culqi.token.id;
+                    alert('Se ha creado un token:' + token.id);
+
+                } else { // ¡Hubo algún problema!
+                    // Mostramos JSON de objeto error en consola
+                    console.log(Culqi.error);
+                    alert(Culqi.error.mensaje);
+                }
+            };
+
+        </script>
+        <div id="culqi_checkout_frame">TODO write content</div>
+        <button id="buyButton">CULQUI</button>
+        <script>
+            $('#buyButton').on('click', function (e) {
+                // Abre el formulario con las opciones de Culqi.settings
+                Culqi.open();
+                e.preventDefault();
+            });
+        </script>
+    </body>
+</html>

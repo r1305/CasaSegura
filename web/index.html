@@ -8,37 +8,82 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+        <link href="css/login.css" rel="stylesheet" type="text/css"/>
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/index.js" type="text/javascript"></script>
         <title>.:Casa Segura:.</title>
     </head>
     <body>
+        <div class="container" align="center">
 
-        <h1>Hola mundo</h1>
-        <div class="container">
             <div class="row">
-                <div class="input-group">
+                <img src="img/logo.PNG" class="img-responsive img-rounded" alt=""/>
+                <br>
+                <div class="input-group inputs text-center">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                    <input id="email" type="text" class="form-control input-mini" name="email" placeholder="Email">
                 </div>
                 <br>
-                <div class="input-group">
-                    <span class="input-group-addon">Text</span>
-                    <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info">
+                <div class="input-group inputs">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password" type="text" class="form-control input-mini" name="password" placeholder="Password">
+                </div>
+                <br>
+                <div class="input-group inputs">
+                    <input type="button" class="btn btn-success btn-md" value="Aceptar" id="login" />
+                    <!--<input type="button" class="btn-link" value="Limpiar"/>-->
+                </div>
+                <br>
+                <div class="input-group inputs">
+                    <input type="button" class="btn btn-success btn-md" value="Registro" id="registro" onclick="location.href = 'registro.html'"/>
+                    <!--<input type="button" class="btn-link" value="Limpiar"/>-->
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div id="loader" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
+                <!-- Modal content-->
+                <div class="modal-content" align="center">
+                    <img src="img/loading.gif" alt="" align="center"/>
+                    <!--<div class="modal-header">
+                        
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>-->
+                </div>
+
+            </div>
+        </div>
     </body>
 </html>
