@@ -39,7 +39,7 @@ and open the template in the editor.
         <script src="js/inicio.js" type="text/javascript"></script>
 
         <!-- Incluye el Checkout de Culqi en tu sitio web-->
-        
+
 
         <title>.:Casa Segura:.</title>
     </head>
@@ -113,7 +113,7 @@ and open the template in the editor.
                         </div>
 
                         <div class="row">
-                            <button id="pagar" data-toggle="modal" class="btn btn-success" data-target="#culqi" disabled="">
+                            <button id="pagar" class="btn btn-success" disabled="">
                                 <i class="fa fa-check" aria-hidden="true"></i> Realizar pago
                             </button>
                         </div>
@@ -127,6 +127,60 @@ and open the template in the editor.
             </div>
         </div>
 
-        
+        <div id="culqi" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <h4 class="modal-title text-center"><b>Verified by Visa</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-payment">
+                            <div>
+                                <label>
+                                    <span>Correo Electrónico</span>
+                                    <input type="text" size="50" data-culqi="card[email]" id="card[email]" class="form-control">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <span>Número de tarjeta</span>
+                                    <input type="text" size="20" data-culqi="card[number]"  id="card[number]"  class="form-control">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <span>CVV</span>
+                                    <input type="text" size="4" data-culqi="card[cvv]" id="card[cvv]"  class="form-control">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <span>Fecha expiración (MM/YYYY)</span>
+                                    <input type="text" size="2" data-culqi="card[exp_month]" id="card[exp_month]" >
+                                    <span>/</span>
+                                    <input type="text" size="4" data-culqi="card[exp_year]" id="card[exp_year]">
+                                </label>
+                            </div>
+                        </form>
+                        <a id="btn_pagar" class="btn btn-success" href="#">Pagar</a>
+                        <div class="panel panel-default" id="response-panel">
+                            <div class="panel-heading">Response</div>
+                            <div class="panel-body" id="response">Response</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <i class="fa fa-times" aria-hidden="true"></i> Cancelar
+                    </button>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+        <script src="https://checkout.culqi.com/v2"></script>
+        <script src="js/pagar.js"></script>
+
     </body>
 </html>

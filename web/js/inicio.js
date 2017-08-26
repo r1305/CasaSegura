@@ -28,6 +28,11 @@ $(function () {
             $("#pagar").attr("disabled",true);
         }
     });
+    
+    $('#pagar').on('click',function(){
+       $("#cotizacion").modal('hide');
+       $("#culqi").modal('show');
+    });
 });
 
 function printCounter(n) {
