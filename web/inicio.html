@@ -52,30 +52,60 @@ and open the template in the editor.
                 <label>TIEMPO ASEGURADO</label>
                 <br>
                 <br>
+                <div class="col-md-12 text-center" style="width: 100%" align="center">
+                    <select id="frecuencia" class="form-control">
+                        <option value="1">Semana</option>
+                        <option value="2">Mes</option>
+                    </select>
+                </div>
+                <br>
+                <br>
                 <div class="col-md-12">
                     <img id="restar" src="https://png.icons8.com/minus/ios7/32" title="Plus" width="32" height="32">
-                    <label id="contador_dias">0 dias</label>
+                    <label id="contador_dias">0 semanas</label>
                     <img id="sumar" src="https://png.icons8.com/plus/ios7/32" title="Plus" width="32" height="32">                    
                 </div>
             </div>
             <br>
-            <div class="row">
-                <div class="col-md-12 text-center" style="width: 100%" align="center">
-                    <select id="monto_asegurado" class="form-control">
-                        <option value=0>--- Seleccione ---</option>
-                        <option value=1>Hasta S/. 10 000</option>
-                        <option value=2>Hasta S/. 20 000</option>
-                        <option value=3>Hasta S/. 30 000</option>
-                        <option value=4>Hasta S/. 40 000</option>
-                        <option value=5>Hasta S/. 50 000</option>
-                    </select>
-                </div>                
-            </div>
+
             <br>
-            <div class="row">
+            <!--<div class="row">
                 <button id="btn_active_service" data-toggle="modal" data-target="#cotizacion" class="btn btn-success" disabled="">
                     <i class="fa fa-usd" aria-hidden="true"></i> Cotizar
                 </button>
+            </div>-->
+            <div class="row">
+                <button id="btn_active_service" data-toggle="modal" data-target="#seguro" class="btn btn-success" disabled="">
+                    Siguiente <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div id="seguro" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <h4 class="modal-title text-center"><b>Seguro en caso de siniestro</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Desea contratar un seguro?</p>
+                        <!--<a id="btn_pagar" class="btn btn-success" href="#">Pagar</a>-->
+                        <div class="panel panel-default" id="response-panel">
+                            <div class="panel-heading">Response</div>
+                            <div class="panel-body" id="response">Response</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" style="float: left" data-dismiss="modal" data-toggle="modal" data-target="#cotizacion">
+                            <i class="fa fa-times" aria-hidden="true"></i> Omitir
+                        </button>
+                        <button class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#monto_asegurado">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i> Si
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div id="cotizacion" class="modal fade" role="dialog">
@@ -106,7 +136,7 @@ and open the template in the editor.
 
                         </div>
                         <div class="row">
-                            <b>S/. </b><label id="prima">50</label>
+                            <b>S/. </b><label id="prima">150</label>
                         </div>
                         <div class="row">
                             <input type="checkbox" id="terminos"> ACEPTO <a>TERMINOS Y CONDICIONES</a>
@@ -121,6 +151,42 @@ and open the template in the editor.
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">
                             <i class="fa fa-times" aria-hidden="true"></i> Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="monto_asegurado" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <h4 class="modal-title text-center"><b>Elija monto a asegurar</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Desea contratar un seguro?</p>
+                        <!--<a id="btn_pagar" class="btn btn-success" href="#">Pagar</a>-->
+                        <div class="row">
+                            <div class="col-md-12 text-center" style="width: 100%" align="center">
+                                <select id="monto_asegurado" class="form-control">
+                                    <option value=0>--- Seleccione ---</option>
+                                    <option value=1>Hasta S/. 10 000</option>
+                                    <option value=2>Hasta S/. 20 000</option>
+                                    <option value=3>Hasta S/. 30 000</option>
+                                    <option value=4>Hasta S/. 40 000</option>
+                                    <option value=5>Hasta S/. 50 000</option>
+                                </select>
+                            </div>                
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" style="float: left" data-dismiss="modal" data-toggle="modal" data-target="#cotizacion">
+                            <i class="fa fa-times" aria-hidden="true"></i> Omitir
+                        </button>
+                        <button class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#cotizacion">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i> Guardar
                         </button>
                     </div>
                 </div>
@@ -165,18 +231,18 @@ and open the template in the editor.
                             </div>
                         </form>
                         <a id="btn_pagar" class="btn btn-success" href="#">Pagar</a>
-                        <div class="panel panel-default" id="response-panel">
+                        <!--<div class="panel panel-default" id="response-panel">
                             <div class="panel-heading">Response</div>
                             <div class="panel-body" id="response">Response</div>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">
-                        <i class="fa fa-times" aria-hidden="true"></i> Cancelar
-                    </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">
+                            <i class="fa fa-times" aria-hidden="true"></i> Cancelar
+                        </button>
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         </div>
         <script src="https://checkout.culqi.com/v2"></script>
