@@ -15,6 +15,7 @@ function culqi(){
         console.log(Culqi.token.id);
         alert('¡EL TOKEN HA SIDO CREADO!\n'+Culqi.token.id);
         $("#culqi").modal('hide');
+        location.href="activacion.html";
 //        $.ajax({
 //            type:'POST',
 //            url:'RUTA BACKEND',

@@ -3,7 +3,7 @@ $(function () {
     
     $("#sumar").on('click', function () {
         contador = contador + 1;
-        printCounter(contador, $("#frecuencia").val())
+        printCounter(contador, $("#frecuencia").val());
         enableButton(contador);
     });
 
